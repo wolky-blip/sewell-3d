@@ -193,7 +193,7 @@ const SALAS = {
       { t: 'apunte', i: 3, x: -5, y: 5.6, z: -10 },   // 2.º piso, en el hall junto a la baranda de la escalera
       { t: 'minero', x: -2, z: -14, y: 4.6 },
     ],
-    entrada: { x: 0, z: -2 }, salida: { x: 0, z: -6, y: 4.6 } },
+    entrada: { x: 0, z: -2 }, salida: { x: -1.0, z: -33, y: 4.6 } },   // HOSP-SALIDA (17-11, pedido de Diego): la salida va empotrada en el muro del fondo de la ÚLTIMA sala del 2.º piso (maternidad), no suelta en medio del hall
 };
 
 // N4-SALAS (15-11-2026): salas por época para las puertas que tenían disparador y no sala (E no hacía nada).
@@ -404,7 +404,7 @@ export const NIVELES = {
     ],
     salas: ['club45', 'hospital', 'iglesia', 'cine45', 'palitroque45', 'escuela45'],   // N2-ESCUELA   // N4-SALAS: + cine y palitroque (1945, antes de la tragedia: abiertos)   // N0-EMB9: el gimnasio y la piscina temperada ahora son el Teniente Club por dentro (club45 = con el apunte 1)
     ruta: [[0, -150], [0, -200], [0, -265], [-30, -306], [-70, -308], [-96, -313, 'puerta'], ['sala', 3, -4.6], ['sala', 0, -2, 'puerta'],   /* N0-EMB9: el gimnasio ahora es el Teniente Club (club45): se entra al vestíbulo y se sale por la misma puerta */
-      [-122.5, -366], [-122.5, -392], [-125, -400], [-150, -400], [-120, -400], [-60, -380], [0, -340], [40, -324, 'puerta'], ['sala', 5.5, -3.0, 'ascensor'] /* C7: ascensor del kit hospital157 (antes 6, −36) */, ['sala', 0, -8, 'puerta'], [40, -420, 'jefe']],
+      [-122.5, -366], [-122.5, -392], [-125, -400], [-150, -400], [-120, -400], [-60, -380], [0, -340], [40, -324, 'puerta'], ['sala', 5.5, -3.0, 'ascensor'] /* C7: ascensor del kit hospital157 (antes 6, −36) */, ['sala', 2, -4.5], ['sala', 0, -9.5], ['sala', 0, -12], ['sala', 0, -17], ['sala', 0, -18.8], ['sala', 3.2, -20], ['sala', 3.2, -26], ['sala', 0, -27], ['sala', 0, -29], ['sala', -1, -32.6, 'puerta'] /* HOSP-SALIDA: hall → rayos X → pabellón (por el lado de la vitrina) → maternidad → salida del fondo */, [40, -420, 'jefe']],
   },
   4: {
     ...N[4], numero: 4, epoca: 1967, sol: { alto: 0.55, tono: 0xffe9c9 }, nieveDesde: 240, niebla: 0xd8e2ec,

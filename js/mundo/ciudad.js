@@ -342,7 +342,7 @@ export function ajustarNivelCono(def) {
     def.ruta = [[0, -150], [0, -200], [0, -265], [0, -274], [-30, -292],   // [0,-274]: subir a la plaza por la escalera (en diagonal chocaba con el borde de la losa)
        P(290, -50), P(290, -62), P(290, -75), ...clubSube('club'), ['sala', 3, -4.6], ['sala', 0, -2, 'puerta'], ...clubSube('club', true),   /* N0-EMB9: el gimnasio ahora es el Teniente Club (club45): se entra al vestíbulo y se sale por la misma puerta */
       P(290, -75), P(290, -62), P(290, -50), [-30, -300], [0, -322], [0, -350], [0, -382], ...ida, ...vuelta, [0, -350], [0, -330], [40, -324, 'puerta'],
-      ['sala', 5.5, -3.0, 'ascensor'] /* C7: ascensor del kit hospital157 */, ['sala', 0, -8, 'puerta'], [40, -420, 'jefe']];
+      ['sala', 5.5, -3.0, 'ascensor'] /* C7: ascensor del kit hospital157 */, ['sala', 2, -4.5], ['sala', 0, -9.5], ['sala', 0, -12], ['sala', 0, -17], ['sala', 0, -18.8], ['sala', 3.2, -20], ['sala', 3.2, -26], ['sala', 0, -27], ['sala', 0, -29], ['sala', -1, -32.6, 'puerta'] /* HOSP-SALIDA: salida al fondo de la maternidad */, [40, -420, 'jefe']];
     for (const e of elementos) {
       if (e.t === 'alud') { e.inicio = ini; e.ruta = [ini, P(382, -90), P(382, -80), P(382, -70), P(382, -60), P(382, -50), P(382, -40), P(382, -30), P(382, -20), P(382, -10), [0, -382], [0, -324], [40, -322]]; }
       if (e.t === 'fogata' && e.x === -150) { [e.x, e.z] = P(382, -104, -1); }

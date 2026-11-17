@@ -593,33 +593,36 @@ function cine165(op) {
   const yA = H - 3, flecha = Math.min(5.4, wN * 0.28), yW = yA - flecha;     // clave de la bóveda (a ras de la colisión) y arranque
   const ventanas = [];   // { f, rot, u, v, w, h }
   const cara = (id, f, rot, u0, u1, v0, v1, vanos, clave = 'estuco') => { muroConVanos(J, clave, (u, v) => f(u, v), u0, u1, v0, v1, vanos.map(o => ({ u0: o.u - o.w / 2, u1: o.u + o.w / 2, v0: o.v - o.h / 2, v1: o.v + o.h / 2 }))); for (const o of vanos) if (!o.hueco) ventanas.push({ f, rot, ...o }); };
-  // --- torre de 3 pisos a dos aguas (atrás a la izquierda): 6 × 5,2 m, cumbrera a lo largo de X
-  const tL = Math.min(6.4, wN * 0.33), tW = Math.min(5.2, W * 0.36), tx0 = -wN / 2, tx1 = tx0 + tL, tz0 = zA, tz1 = zA + tW;
+  // --- torre del escenario, 3 pisos a dos aguas, al fondo y de TODO el ancho de la nave (plano M-1342, elevación norte: el hastial
+  // de la torre se ve en el costado). CINE-UNO (17-11): antes era una torre chica en la esquina de atrás y el muro alto del costado
+  // oeste quedaba ADELANTE (u → z al revés): desde la calle se veían «2 casas mezcladas». Cumbrera a lo largo de X, bajo la línea
+  // de vista del frontón: desde la calle se ve solo el frontón, como en las fotos.
+  const tL = wN, tW = Math.min(5.2, W * 0.36), tx0 = -wN / 2, tx1 = wN / 2, tz0 = zA, tz1 = zA + tW;
   const yTc = H - 0.1, pT = 0.85, yTe = yTc - pT * (tW / 2 + 0.3), yTm = yTe + pT * 0.3 - 0.1;
   // --- nave: costados con ventanas altas estrechas en fila; fondo; frente bajo el frontón
   const filaV = (largo, excl = () => false) => { const n = Math.max(1, Math.floor((largo - 2) / 2.6)), o = []; for (let i = 0; i < n; i++) { const u = (i - (n - 1) / 2) * 2.6; if (!excl(u)) o.push({ u, v: zoc + 4.4, w: 0.8, h: 3.2 }); } return o; };
   const zcN = (zF + zA) / 2, lN = zF - zA;
-  cara('este', (u, v) => [wN / 2, v, zcN - u], Math.PI / 2, -lN / 2, lN / 2, zoc, yW, filaV(lN));
-  // oeste: la torre ocupa el tramo de atrás (u > lN/2 - tW) y sube hasta su alero
-  cara('oeste', (u, v) => [-wN / 2, v, zcN + u], -Math.PI / 2, -lN / 2, lN / 2 - tW, zoc, yW, filaV(lN, u => u > lN / 2 - tW - 1.2));
-  cara('oesteT', (u, v) => [-wN / 2, v, zcN + u], -Math.PI / 2, lN / 2 - tW, lN / 2, zoc, yTm, [0.8, 4.0, 7.2, 10.4].slice(0, 4).map(y => ({ u: lN / 2 - tW / 2, v: zoc + 2 + y, w: 0.9, h: 1.5 })).filter(o => o.v < yTm - 1));
-  cara('fondo', (u, v) => [-u, v, zA], Math.PI, -wN / 2, wN / 2 - tL, zoc, yW, [{ u: wN / 2 - tL - 3, v: zoc + 1.3, w: 1.6, h: 2.4, hueco: false }]);   // portón de escena atrás
-  cara('fondoT', (u, v) => [-u, v, zA], Math.PI, wN / 2 - tL, wN / 2, zoc, yTm, [2, 5.2, 8.4, 11.6].map(y => [-1.6, 0, 1.6].map(du => ({ u: wN / 2 - tL / 2 + du, v: zoc + 1.6 + y, w: 0.85, h: 1.45 }))).flat().filter(o => o.v < yTm - 1));
-  // caras interiores de la torre (solo se ven sobre la bóveda)
-  cara('torreE', (u, v) => [tx1, v, (tz0 + tz1) / 2 - u], Math.PI / 2, -tW / 2, tW / 2, yW - 0.5, yTm, [{ u: 0, v: yTm - 1.6, w: 0.85, h: 1.4 }]);
-  cara('torreN', (u, v) => [u, v, tz1], 0, tx0, tx1, yW - 0.5, yTm, [-1.6, 0, 1.6].map(du => ({ u: (tx0 + tx1) / 2 + du, v: yTm - 1.6, w: 0.85, h: 1.4 })));
+  // costados: la nave hasta el arranque de la bóveda y el tramo de la torre (z de zA a tz1, atrás) hasta su alero
+  const vT = uc => [0.8, 4.0, 7.2, 10.4].flatMap(y => [-1.1, 1.1].map(du => ({ u: uc + du, v: zoc + 2 + y, w: 0.9, h: 1.5 }))).filter(o => o.v < yTm - 1);
+  cara('este', (u, v) => [wN / 2, v, zcN - u], Math.PI / 2, -lN / 2, lN / 2 - tW, zoc, yW, filaV(lN, u => u > lN / 2 - tW - 1.2));   // este: z = zcN − u (atrás = u grande)
+  cara('esteT', (u, v) => [wN / 2, v, zcN - u], Math.PI / 2, lN / 2 - tW, lN / 2, zoc, yTm, vT(lN / 2 - tW / 2));
+  cara('oeste', (u, v) => [-wN / 2, v, zcN + u], -Math.PI / 2, -lN / 2 + tW, lN / 2, zoc, yW, filaV(lN, u => u < -lN / 2 + tW + 1.2));   // oeste: z = zcN + u (atrás = u chico)
+  cara('oesteT', (u, v) => [-wN / 2, v, zcN + u], -Math.PI / 2, -lN / 2, -lN / 2 + tW, zoc, yTm, vT(-lN / 2 + tW / 2));
+  // fondo: todo es la torre del escenario (portón de escena abajo y ventanas por piso)
+  cara('fondoT', (u, v) => [-u, v, zA], Math.PI, -wN / 2, wN / 2, zoc, yTm, [{ u: wN / 2 - 3, v: zoc + 1.3, w: 1.6, h: 2.4, hueco: false },
+    ...[2, 5.2, 8.4, 11.6].map(y => [-wN / 2 + 2.4, -1.6, 0, 1.6, wN / 2 - 2.4].map(u => ({ u, v: zoc + 1.6 + y, w: 0.85, h: 1.45 }))).flat().filter(o => o.v < yTm - 1)]);
+  // cara de la torre hacia la nave (solo se ve sobre la bóveda)
+  cara('torreN', (u, v) => [u, v, tz1], 0, tx0, tx1, yW - 0.5, yTm, [-1.6, 0, 1.6].map(du => ({ u: du, v: yTm - 1.6, w: 0.85, h: 1.4 })));
   // frente de la nave (a los lados del cuerpo de acceso y sobre él, hasta el arranque de la bóveda)
   cara('frenteN', (u, v) => [u, v, zF], 0, -wN / 2, wN / 2, zoc, yW, [{ u: -wN / 2 + (wN / 2 - wB / 2) / 2, v: zoc + 4.4, w: 0.8, h: 3.2 }, { u: wN / 2 - (wN / 2 - wB / 2) / 2, v: zoc + 4.4, w: 0.8, h: 3.2 },
     ...[-2.2, 0, 2.2].map(u => ({ u, v: hB + 1.3, w: 0.7, h: 1.0 }))].filter(o => Math.abs(o.u) > wB / 2 + 0.5 || o.v > hB + 0.6));
   // --- bóveda de zinc (parábola) entre el frontón y el fondo, con vuelo de 0,35 m a los costados
   const n = 14, P = [];
   for (let i = 0; i <= n; i++) { const t = i / n * 2 - 1, x = t * (wN / 2 + 0.35); P.push([x, yW + flecha * (1 - t * t) - (Math.abs(t) > 0.97 ? 0.1 : 0)]); }
-  const zb0 = zA - 0.3, zb1 = zF + 0.1;
+  const zb0 = tz1 - 0.05, zb1 = zF + 0.1;   // CINE-UNO: la bóveda llega a la torre (antes la atravesaba hasta el fondo)
   for (let i = 0; i < n; i++) { const [x0, y0] = P[i], [x1, y1] = P[i + 1]; J.quad('boveda', [x0, y0, zb1], [x1, y1, zb1], [x1, y1, zb0], [x0, y0, zb0]); }
   for (const s of [-1, 1]) J.caja('blanco', s * (wN / 2 + 0.3), yW - 0.1, (zb0 + zb1) / 2, 0.08, 0.24, zb1 - zb0);   // tapacán del vuelo
-  // tímpano de atrás (bajo la bóveda) y del frente (tapado por el frontón)
-  { const c = wN / 2 / (wN / 2 + 0.35), f = (x, y) => [x, y, zA];   // tímpano de atrás en franjas verticales, como la cara 'fondo' (u = −x)
-    for (let i = 0; i < n; i++) { const [x0, y0] = P[i], [x1, y1] = P[i + 1]; J.quad('estuco', f(x1 * c, yW), f(x0 * c, yW), f(x0 * c, y0), f(x1 * c, y1)); } }
+  // (sin tímpano de atrás: la bóveda remata contra la cara torreN de la torre del escenario)
   // --- frontón estucado: triángulo más alto que la bóveda, con remate, la placa «165» y la celosía
   const fA = yA + 1.1, fx = wN / 2 + 0.25;
   J.tri('estuco', [0, yW, zF + 0.04], [fx, yW, zF + 0.04], [0, fA, zF + 0.04]); J.tri('estuco', [0, yW, zF + 0.04], [0, fA, zF + 0.04], [-fx, yW, zF + 0.04]);
@@ -631,7 +634,7 @@ function cine165(op) {
   J.caja('blanco', 0, yCel, zF + 0.06, 2.2, 1.5, 0.1); J.caja('fierro', 0, yCel, zF + 0.09, 1.9, 1.2, 0.02);
   for (let k = 0; k < 7; k++) J.caja('blanco', 0, yCel - 0.52 + k * 0.17, zF + 0.14, 1.9, 0.05, 0.1, 0, 0.6);
   // --- ventiladores cilíndricos con sombrerete en la clave de la bóveda
-  for (const zv of [zF - 2.2, zF - 2.2 - lN * 0.42]) {
+  for (const zv of [zF - 1.4, Math.min(zF - 3.4, tz1 + 1.4)]) {   // CINE-UNO: los dos sobre la nave (el de atrás quedaba dentro de la torre)
     J.add('chapa', new THREE.CylinderGeometry(0.42, 0.46, 1.7, 14).translate(0, yA + 0.75, zv));
     J.add('chapa', new THREE.CylinderGeometry(0.5, 0.5, 0.12, 14).translate(0, yA + 1.62, zv));
     J.add('chapa', new THREE.ConeGeometry(0.72, 0.42, 14).translate(0, yA + 2.0, zv));

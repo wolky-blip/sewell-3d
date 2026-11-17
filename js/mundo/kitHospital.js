@@ -625,9 +625,9 @@ export function salaHospital(S, O, fis) {
       { const p = mueble(R('mesa_mudar', 1.6, Y2, -L + 0.4, 0, ESC_G2.mesa_mudar), 1.6, -L + 0.4, 0, Y2); p.b('blanco', 0, 0.45, 0, 1.3, 0.9, 0.6);   // N0-UTIL3 p.b('colchon', -0.25, 0.93, 0, 0.6, 0.05, 0.5);
         p.b('fierroN', 0.35, 0.95, 0, 0.3, 0.1, 0.3); p.s('laton', 0.22, 0.35, 1.08, 0, 1, 0.22, 0.7, 12, 6); p.c('esfera', 0.08, 0.08, 0.02, 0.35, 1.12, 0.17, 14, Math.PI / 2);
         F2(1.6, 0.5, -L + 0.4, 1.35, 1.0, 0.65); }
-      { const p = mueble(R('mecedora_mimbre', -1.8, Y2, -32.2, 0.6), -1.8, -32.2, 0.6, Y2); /* C7 (H41) */ p.b('mimbre', 0, 0.45, 0, 0.5, 0.05, 0.5); p.b('mimbre', 0, 0.85, -0.24, 0.5, 0.75, 0.04, 0, -0.12);
+      { const p = mueble(R('mecedora_mimbre', -3.4, Y2, -31.0, 0.6), -3.4, -31.0, 0.6, Y2); /* C7 (H41) */ /* HOSP-SALIDA: corrida 1,6 m: la salida del N3 va en el fondo (x −1) */ p.b('mimbre', 0, 0.45, 0, 0.5, 0.05, 0.5); p.b('mimbre', 0, 0.85, -0.24, 0.5, 0.75, 0.04, 0, -0.12);
         for (const s of [-1, 1]) { p.g('maderaOsc', new THREE.TorusGeometry(0.45, 0.02, 5, 10, 1.0).rotateZ(-Math.PI / 2 - 0.5).rotateY(Math.PI / 2).translate(s * 0.24, 0.47, 0)); p.b('maderaOsc', s * 0.24, 0.25, 0, 0.04, 0.42, 0.04); }
-        F2(-1.8, 0.5, -32.2, 0.7, 1.0, 0.7); }
+        F2(-3.4, 0.5, -31.0, 0.7, 1.0, 0.7); }
       cartel(g, texCartel(['SILENCIO', 'RECIÉN NACIDOS'], '#f1eee4', '#8a1c1c'), 1.1, 0.32, 0, Y2 + 2.9, -L + 0.03, 0);
       cartel(g, texCalendario(anio, viejo ? 'MAYO' : 'NOVIEMBRE'), 0.3, 0.38, -2.4, Y2 + 1.85, -L + 0.03, 0);
     }
