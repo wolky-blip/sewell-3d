@@ -1,0 +1,38 @@
+{
+ "id": "senora",
+ "alto": 1.58,
+ "vel": {
+  "caminar": 0.679,
+  "correr": 2.93
+ },
+ "huella": 0.32,
+ "contra": 0.195,
+ "ciclo_escalera": 1.2,
+ "peldanos_ciclo": 2,
+ "medidas": {
+  "brazo": 0.244,
+  "cuello": 0.314,
+  "entrepierna": -0.097,
+  "falda": true
+ },
+ "acciones": [
+  "b_aplaudir",
+  "b_bolsa",
+  "b_bolsillo",
+  "b_brazo",
+  "b_cartera",
+  "b_diario",
+  "b_pan",
+  "b_ramo",
+  "b_tocar_golpear",
+  "b_tocar_soplar",
+  "bajar",
+  "caminar",
+  "correr",
+  "hablar",
+  "idle",
+  "jugar",
+  "saludar",
+  "subir"
+ ]
+}

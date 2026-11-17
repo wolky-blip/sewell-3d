@@ -1,0 +1,67 @@
+:root { --cobre: #ffb347; --oscuro: #1a1420; --borde: #f3e6c8; }
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+html, body { margin: 0; height: 100%; overflow: hidden; background: #0d0b10; color: #fff; font-family: 'Trebuchet MS', 'DejaVu Sans', 'Segoe UI', sans-serif; touch-action: none; user-select: none; }
+#lienzo { position: fixed; inset: 0; width: 100vw; height: 100dvh; display: block; }
+.oculto { display: none !important; }
+#hud { position: fixed; inset: 0; pointer-events: none; text-shadow: 0 2px 0 var(--oscuro), 0 0 4px var(--oscuro); font-weight: bold; }
+#hud-izq { position: absolute; left: max(14px, env(safe-area-inset-left)); top: 12px; font-size: 22px; }
+#hud-der { position: absolute; right: max(14px, env(safe-area-inset-right)); top: 12px; text-align: right; font-size: 20px; }
+#hud-corazones { color: #ff5a5a; letter-spacing: 2px; }
+#hud-corazones .medio-cor { position: relative; display: inline-block; color: rgba(255, 235, 235, 0.45); }
+#hud-corazones .medio-cor::before { content: '♥'; position: absolute; left: 0; top: 0; width: 50%; overflow: hidden; color: #ff5a5a; }
+#hud-energia { display: flex; align-items: center; gap: 6px; margin-top: 6px; }
+#hud-energia .barra { width: 140px; height: 12px; border: 2px solid var(--borde); border-radius: 7px; overflow: hidden; background: #0008; }
+#hud-barra-energia { height: 100%; width: 0; background: linear-gradient(90deg, #c97a2a, var(--cobre)); }
+#hud-chaqueta { color: var(--cobre); margin-top: 6px; font-size: 18px; }
+.pepita { color: #e08b3c; }
+#hud-apuntes, #hud-reliquias { font-size: 16px; margin-top: 4px; color: #f3e6c8; }
+#hud-reloj { font-size: 22px; margin-top: 4px; color: #ffe066; }
+#hud-trucos { color: #8fe3ff; font-size: 14px; }
+#hud-zona { position: absolute; top: 18%; width: 100%; text-align: center; font-size: 30px; letter-spacing: 2px; opacity: 0; transition: opacity .6s; }
+#hud-zona.ver { opacity: 1; }
+#hud-aviso { position: absolute; bottom: 22%; width: 100%; text-align: center; font-size: 22px; color: #ffe066; }
+#hud-fps { position: absolute; left: 8px; bottom: 6px; font-size: 12px; opacity: .6; font-weight: normal; }
+#burbuja { position: fixed; left: 50%; bottom: 14%; transform: translateX(-50%); max-width: min(560px, 86vw); background: #fffdf5ee; color: #222; border: 3px solid var(--oscuro); border-radius: 14px; padding: 10px 16px; font-size: 18px; pointer-events: none; }
+#burbuja b { color: #9a4b12; }
+#modal { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; background: #0006; }
+#modal-caja { width: min(560px, 90vw); background: #f6ecd2; color: #2a1d10; border: 4px solid #6b4423; border-radius: 10px; padding: 16px 20px; font-size: 18px; box-shadow: 0 8px 30px #0009; }
+#modal-titulo { font-weight: bold; color: #8a3c0c; margin-bottom: 8px; }
+#modal-pie { text-align: right; margin-top: 10px; color: #8a3c0c; font-weight: bold; }
+#tarjeta { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; background: #0b0910; }
+#tarjeta-caja { width: min(760px, 90vw); text-align: center; font-size: 22px; line-height: 1.45; }
+#tarjeta-caja h1 { color: var(--cobre); font-size: 34px; margin: 0 0 6px; }
+#tarjeta-caja h2 { color: #f3e6c8; font-size: 22px; margin: 0 0 18px; font-weight: normal; }
+#tarjeta-caja .pie { margin-top: 22px; font-size: 16px; opacity: .7; }
+#tarjeta.sobrio #tarjeta-caja { color: #dfe6ee; font-size: 20px; }
+#tarjeta.sobrio h1 { color: #dfe6ee; }
+#fundido { position: fixed; inset: 0; background: #000; opacity: 0; pointer-events: none; transition: opacity .45s; }
+#titulo, #pausa { position: fixed; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; background: radial-gradient(#2a1d2acc, #0b0910f0); text-align: center; padding: 16px; }
+#titulo h1 { font-size: clamp(30px, 5.2vw, 58px); line-height: 1.05; margin: 0; color: var(--cobre); text-shadow: 0 4px 0 #5a2a0a; }
+#titulo h2 { margin: 4px 0 8px; font-weight: normal; color: #f3e6c8; }
+#titulo .nota { opacity: .7; margin: 0 0 14px; }
+.menu { display: flex; flex-direction: column; gap: 10px; min-width: 280px; }
+.menu button, .menu select { font: inherit; font-size: 20px; padding: 8px 14px; border-radius: 10px; border: 3px solid var(--borde); background: #3a2410; color: #fff; cursor: pointer; }
+.menu button:focus, .menu button:hover { background: #7a4416; }
+.menu label { display: flex; justify-content: space-between; gap: 10px; align-items: center; font-size: 18px; }
+.controles { font-size: clamp(14px, 1.25vw, 17px); line-height: 1.45; opacity: .9; margin-top: 16px; max-width: 920px; }   /* N0-FABLE-1611b M23: legible a 1280x720 */
+#tactil { position: fixed; inset: 0; pointer-events: none; }
+#palanca { position: absolute; left: calc(max(18px, env(safe-area-inset-left)) + 10px); bottom: calc(max(18px, env(safe-area-inset-bottom)) + 10px); width: clamp(110px, 30vmin, 170px); height: clamp(110px, 30vmin, 170px); border-radius: 50%; background: #ffffff22; border: 3px solid #ffffff55; pointer-events: auto; }
+#palanca-pomo { position: absolute; left: 50%; top: 50%; width: 42%; height: 42%; margin: -21% 0 0 -21%; border-radius: 50%; background: #ffffff88; }
+#botones { position: absolute; right: calc(max(18px, env(safe-area-inset-right)) + 6px); bottom: calc(max(18px, env(safe-area-inset-bottom)) + 6px); display: grid; grid-template-columns: repeat(2, clamp(52px, 14vmin, 76px)); gap: 10px; pointer-events: auto; }
+#botones button, #b-pausa { width: clamp(52px, 14vmin, 76px); height: clamp(52px, 14vmin, 76px); border-radius: 50%; border: 3px solid #ffffffaa; background: #00000055; color: #fff; font-size: 22px; font-weight: bold; }
+#b-pausa { position: absolute; right: calc(max(14px, env(safe-area-inset-right))); top: 90px; width: 46px; height: 46px; font-size: 16px; pointer-events: auto; }
+#error { position: fixed; left: 10px; right: 10px; bottom: 10px; background: #600; color: #fff; padding: 10px; font: 13px monospace; white-space: pre-wrap; }
+
+/* pantalla de carga de cada nivel: el juego no empieza hasta que la ciudad está completa */
+#carga { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; background: radial-gradient(#2a1d2a, #0b0910); z-index: 50; padding: 16px; }
+#carga-caja { width: min(640px, 92vw); text-align: center; }
+#carga-titulo { color: var(--cobre); font-size: clamp(26px, 5vw, 40px); font-weight: bold; text-shadow: 0 3px 0 #5a2a0a; }
+#carga-sub { color: #f3e6c8; font-size: 20px; margin: 4px 0 26px; }
+#carga-barra { height: 22px; border: 3px solid var(--borde); border-radius: 12px; background: #1c1418; overflow: hidden; }
+#carga-relleno { height: 100%; width: 0; background: linear-gradient(90deg, #b8642a, #e8a050); transition: width .25s; }
+#carga-texto { margin-top: 10px; font-size: 16px; color: #e8dccb; min-height: 1.4em; }
+#carga-consejo { margin-top: 22px; font-size: 15px; opacity: .65; min-height: 1.4em; }
+#carga.sobrio { background: #07080c; }
+#carga.sobrio #carga-titulo { color: #dfe6ee; text-shadow: none; }
+#carga.sobrio #carga-relleno { background: #8a94a4; }
+.menu .foco-mando, .menu select:focus { outline: 3px solid #ffd34d; outline-offset: 2px; }   /* G-MANDO: foco del mando en los menús */

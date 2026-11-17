@@ -1,0 +1,38 @@
+{
+ "id": "gringo",
+ "alto": 1.8,
+ "vel": {
+  "caminar": 0.713,
+  "correr": 3.34
+ },
+ "huella": 0.32,
+ "contra": 0.195,
+ "ciclo_escalera": 1.2,
+ "peldanos_ciclo": 2,
+ "medidas": {
+  "brazo": 0.221,
+  "cuello": 0.326,
+  "entrepierna": -0.254,
+  "falda": false
+ },
+ "acciones": [
+  "b_aplaudir",
+  "b_bolsa",
+  "b_bolsillo",
+  "b_brazo",
+  "b_cartera",
+  "b_diario",
+  "b_pan",
+  "b_ramo",
+  "b_tocar_golpear",
+  "b_tocar_soplar",
+  "bajar",
+  "caminar",
+  "correr",
+  "hablar",
+  "idle",
+  "jugar",
+  "saludar",
+  "subir"
+ ]
+}

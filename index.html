@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<title>Sewell y su Historia en 3D · Nato y la ciudad de las escaleras</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="css/juego.css">
+<script>/* CACHE-MOVIL (16-11-2026): Service Worker (sw.js) que guarda el juego en el celular. Solo en el perfil Móvil (misma regla que
+  E.movil en js/motor/entrada.js, o ?calidad=movil) y en contexto seguro (https o localhost); ?sw=0 lo apaga. En PC se quita si quedó. */
+(() => { try {
+  const q = new URLSearchParams(location.search), m = q.get('movil'), sw = navigator.serviceWorker; if (!sw || !isSecureContext) return;
+  const lado = Math.min(screen.width || innerWidth, screen.height || innerHeight), toque = (navigator.maxTouchPoints || 0) > 0 || 'ontouchstart' in window;
+  const movil = m === '1' || q.get('calidad') === 'movil' || (m !== '0' && (matchMedia('(pointer: coarse)').matches || (toque && lado <= 900) || lado < 500));
+  if (!movil || q.get('sw') === '0') { sw.getRegistrations().then(l => l.forEach(r => /\/sw\.js$/.test((r.active || r.installing || r.waiting || {}).scriptURL || '') && r.unregister())); return; }
+  window.SW_INICIO = !!sw.controller; window.SW_MOVIL = sw.register('sw.js', { updateViaCache: 'none' });
+} catch (e) { /* sin Service Worker */ } })();</script>
+<script type="importmap">
+{ "imports": {
+  "three": "./lib/three/build/three.module.js",
+  "three/addons/loaders/GLTFLoader.js": "./js/motor/gltfComprimido.js",
+  "three/addons/": "./lib/three/examples/jsm/",
+  "@sparkjsdev/spark": "./lib/spark/spark.module.js",
+  "rapier": "./lib/rapier/rapier.mjs"
+} }
+</script>
+<!-- MOVIL (publicar.py): módulos del arranque en paralelo -->
+<link rel="modulepreload" href="./js/mundo/mallas.js">
+<link rel="modulepreload" href="./js/motor/render.js">
+<link rel="modulepreload" href="./lib/three/examples/jsm/objects/Sky.js">
+<link rel="modulepreload" href="./js/motor/fisica.js">
+<link rel="modulepreload" href="./js/motor/camara.js">
+<link rel="modulepreload" href="./js/motor/entrada.js">
+<link rel="modulepreload" href="./js/ui/tactil.js">
+<link rel="modulepreload" href="./js/motor/audio.js">
+<link rel="modulepreload" href="./js/cine/musica.js">
+<link rel="modulepreload" href="./js/cine/inicio.js">
+<link rel="modulepreload" href="./js/cine/finales.js">
+<link rel="modulepreload" href="./js/cine/titulo.js">
+<link rel="modulepreload" href="./js/mundo/construir.js">
+<link rel="modulepreload" href="./js/mundo/ofrenda.js">
+<link rel="modulepreload" href="./js/mundo/interiores.js">
+<link rel="modulepreload" href="./js/motor/vistaVentanas.js">
+<link rel="modulepreload" href="./js/mundo/irLugar.js">
+<link rel="modulepreload" href="./js/mundo/paseoVagoneta.js">
+<link rel="modulepreload" href="./js/mundo/turismo.js">
+<link rel="modulepreload" href="./js/mundo/terreno.js">
+<link rel="modulepreload" href="./js/datos/niveles.js">
+<link rel="modulepreload" href="./js/datos/textos2d.js">
+<link rel="modulepreload" href="./js/juego/jugador.js">
+<link rel="modulepreload" href="./js/juego/entidades.js">
+<link rel="modulepreload" href="./js/juego/logica.js">
+<link rel="modulepreload" href="./js/ui/hud.js">
+<link rel="modulepreload" href="./js/ui/mapa.js">
+<link rel="modulepreload" href="./js/juego/separacion.js">
+<link rel="modulepreload" href="./js/motor/gltfComprimido.js">
+<link rel="modulepreload" href="./js/motor/cacheMovil.js">
+<link rel="modulepreload" href="./lib/three/examples/jsm/utils/SkeletonUtils.js">
+<link rel="modulepreload" href="./js/motor/animMalla.js">
+<link rel="modulepreload" href="./js/mundo/kitSewell.js">
+<link rel="modulepreload" href="./js/mundo/kitEmblemas.js">
+<link rel="modulepreload" href="./lib/three/examples/jsm/postprocessing/EffectComposer.js">
+<link rel="modulepreload" href="./lib/three/examples/jsm/postprocessing/RenderPass.js">
+<link rel="modulepreload" href="./lib/three/examples/jsm/postprocessing/GTAOPass.js">
+<link rel="modulepreload" href="./lib/three/examples/jsm/postprocessing/UnrealBloomPass.js">
+<link rel="modulepreload" href="./lib/three/examples/jsm/postprocessing/SMAAPass.js">
+<link rel="modulepreload" href="./lib/three/examples/jsm/postprocessing/ShaderPass.js">
+<link rel="modulepreload" href="./lib/three/examples/jsm/shaders/FXAAShader.js">
+<link rel="modulepreload" href="./lib/three/examples/jsm/postprocessing/OutputPass.js">
+<link rel="modulepreload" href="./js/motor/lodIndice.js">
+<link rel="modulepreload" href="./js/cine/canciones.js">
+<link rel="modulepreload" href="./js/cine/director.js">
+<link rel="modulepreload" href="./js/cine/actores.js">
+<link rel="modulepreload" href="./js/cine/plaza.js">
+<link rel="modulepreload" href="./js/mundo/rellanos.js">
+<link rel="modulepreload" href="./js/mundo/vidaMinera.js">
+<link rel="modulepreload" href="./js/mundo/kitFundicion.js">
+<link rel="modulepreload" href="./js/mundo/ciudadObras.js">
+<link rel="modulepreload" href="./js/mundo/corregirAzul.js">
+<link rel="modulepreload" href="./js/mundo/utileria.js">
+<link rel="modulepreload" href="./js/mundo/mina.js">
+<link rel="modulepreload" href="./js/mundo/texFaena.js">
+<link rel="modulepreload" href="./lib/three/examples/jsm/utils/BufferGeometryUtils.js">
+<link rel="modulepreload" href="./js/mundo/paseoVia.js">
+<link rel="modulepreload" href="./js/datos/alturas.js">
+<link rel="modulepreload" href="./js/mundo/paseoMineros.js">
+<link rel="modulepreload" href="./js/datos/vida.js">
+<link rel="modulepreload" href="./js/datos/turismo.js">
+<link rel="modulepreload" href="./js/mundo/ciudad.js">
+<link rel="modulepreload" href="./js/motor/animSplat.js">
+<link rel="modulepreload" href="./js/motor/variacionNPC.js">
+<link rel="modulepreload" href="./js/juego/boleroJuega.js">
+<link rel="modulepreload" href="./js/motor/mallaCiudad.js">
+<link rel="modulepreload" href="./js/mundo/abasto.js">
+<link rel="modulepreload" href="./lib/three/examples/jsm/loaders/GLTFLoader.js">
+<link rel="modulepreload" href="./lib/three/examples/jsm/loaders/DRACOLoader.js">
+<link rel="modulepreload" href="./lib/three/examples/jsm/libs/meshopt_decoder.module.js">
+<link rel="modulepreload" href="./lib/meshopt/meshopt_simplifier.module.js">
+<link rel="modulepreload" href="./js/mundo/kitClub.js">
+<link rel="modulepreload" href="./js/mundo/kitHospital.js">
+<link rel="modulepreload" href="./js/mundo/kitEscuela.js">
+<link rel="modulepreload" href="./lib/three/examples/jsm/shaders/CopyShader.js">
+<link rel="modulepreload" href="./lib/three/examples/jsm/postprocessing/MaskPass.js">
+<link rel="modulepreload" href="./lib/three/examples/jsm/postprocessing/Pass.js">
+<link rel="modulepreload" href="./lib/three/examples/jsm/shaders/GTAOShader.js">
+<link rel="modulepreload" href="./lib/three/examples/jsm/shaders/PoissonDenoiseShader.js">
+<link rel="modulepreload" href="./lib/three/examples/jsm/math/SimplexNoise.js">
+<link rel="modulepreload" href="./lib/three/examples/jsm/shaders/LuminosityHighPassShader.js">
+<link rel="modulepreload" href="./lib/three/examples/jsm/shaders/SMAAShader.js">
+<link rel="modulepreload" href="./lib/three/examples/jsm/shaders/OutputShader.js">
+<link rel="modulepreload" href="./js/mundo/animales.js">
+<link rel="modulepreload" href="./js/mundo/gente1905.js">
+<link rel="modulepreload" href="./js/mundo/obreros1905.js">
+<link rel="modulepreload" href="./js/mundo/mueblesFinos.js">
+<link rel="modulepreload" href="./js/mundo/mueblesFinos_club.js">
+<link rel="modulepreload" href="./js/mundo/mueblesFinos_casas.js">
+<link rel="modulepreload" href="./js/mundo/mueblesFinos_hospital.js">
+<link rel="modulepreload" href="./js/mundo/mueblesFinos_escuela.js">
+<link rel="modulepreload" href="./js/mundo/mueblesFinos_mina.js">
+<link rel="modulepreload" href="./js/mundo/mueblesFinos_emblemas.js">
+<link rel="modulepreload" href="./js/motor/faldaCodigo.js">
+<link rel="modulepreload" href="./js/mundo/animalMalla.js">
+</head>
+<body>
+<canvas id="lienzo"></canvas>
+<div id="hud" class="oculto">
+  <div id="hud-izq">
+    <div id="hud-vida"><span id="hud-corazones"></span> <span id="hud-vidas"></span></div>
+    <div id="hud-energia"><span class="icono">🐕</span><div class="barra"><div id="hud-barra-energia"></div></div></div>
+    <div id="hud-chaqueta" class="oculto">Chaqueta regalona <span id="hud-chaqueta-s"></span></div>
+  </div>
+  <div id="hud-der">
+    <div><span class="pepita">◆</span> <span id="hud-pepitas">0</span> · <span id="hud-puntos">0</span></div>
+    <div id="hud-apuntes"></div>
+    <div id="hud-reliquias"></div>
+    <div id="hud-reloj" class="oculto"></div>
+    <div id="hud-trucos" class="oculto">INVENCIBLE</div>
+  </div>
+  <div id="hud-zona"></div>
+  <div id="hud-aviso"></div>
+  <div id="hud-fps"></div>
+</div>
+<div id="burbuja" class="oculto"></div>
+<div id="modal" class="oculto"><div id="modal-caja"><div id="modal-titulo"></div><div id="modal-texto"></div><div id="modal-pie">Continuar ▸</div></div></div>
+<div id="tarjeta" class="oculto"><div id="tarjeta-caja"></div></div>
+<div id="fundido"></div>
+<div id="carga" class="oculto"><div id="carga-caja">
+  <div id="carga-titulo"></div><div id="carga-sub"></div>
+  <div id="carga-barra"><div id="carga-relleno"></div></div>
+  <div id="carga-texto"></div><div id="carga-consejo"></div>
+</div></div>
+<!-- M-MOVIL: los controles táctiles los arma js/ui/tactil.js -->
+<div id="titulo" class="oculto">
+  <h1>Sewell y su Historia en 3D</h1>
+  <h2>Nato y la ciudad de las escaleras</h2>
+  <p class="nota">Una aventura en la historia de Sewell.</p>
+  <div class="menu">
+    <button id="t-jugar">Jugar</button>
+    <label>Nivel <select id="t-nivel"><option value="1">1 · Pueblo Hundido</option><option value="2">2 · La ciudad de las escaleras</option><option value="3">3 · El apogeo</option><option value="4">4 · El último tren</option></select></label>
+    <label>Dificultad <select id="t-dif"><option value="facil">Fácil</option><option value="normal" selected>Normal</option><option value="dificil">Difícil</option></select></label>
+    <label>Calidad <select id="t-calidad"><option value="ultra">Ultra</option><option value="media">Media</option><option value="baja">Baja</option><option value="movil">Móvil (celular)</option></select></label>
+  </div>
+  <p class="controles">WASD/flechas: caminar · Shift: correr · Ratón: cámara · Espacio: saltar (doble salto) · J/clic: golpe · K: patada · C: Hércules · E: entrar/hablar · Tab: mapa · Esc: pausa · F: modo foto<br>Mando: palanca izq. caminar (a fondo: correr) · der. cámara · cruceta: caminar · A saltar · X golpe · Y Hércules · B acción · RB patada · Start pausa · Select/Back mapa · clic de la palanca der. foto<br>¿Mando? Conéctalo y aprieta cualquier botón con esta página al frente: aparece «Mando conectado». En los menús: cruceta/palanca para elegir, A para aceptar, Start para jugar.</p>
+</div>
+<div id="pausa" class="oculto"><div class="menu"><h2>Pausa</h2><button id="p-seguir">Seguir</button><button id="p-calidad">Calidad: </button><button id="p-mapa">Mapa (Tab)</button><button id="p-foto">Modo foto</button><button id="p-salir">Salir al título</button></div></div>
+<div id="error" class="oculto"></div>
+<script src="js/recursos/voces.js"></script>
+<script type="module" src="js/principal.js"></script>
+</body>
+</html>

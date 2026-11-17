@@ -1,0 +1,1213 @@
+{
+ "piezas": {
+  "baul": {
+   "glb": "baul.glb",
+   "lod": "baul_lod.glb",
+   "tam": [
+    0.85,
+    0.5,
+    0.48
+   ]
+  },
+  "cocina": {
+   "glb": "cocina.glb",
+   "lod": "cocina_lod.glb",
+   "tam": [
+    1.1,
+    0.85,
+    0.65
+   ]
+  },
+  "ropero": {
+   "glb": "ropero.glb",
+   "lod": "ropero_lod.glb",
+   "tam": [
+    1.0,
+    2.0,
+    0.55
+   ]
+  },
+  "mesa": {
+   "glb": "mesa.glb",
+   "lod": "mesa_lod.glb",
+   "tam": [
+    1.0,
+    0.78,
+    0.8
+   ]
+  },
+  "comoda": {
+   "glb": "comoda.glb",
+   "lod": "comoda_lod.glb",
+   "tam": [
+    1.0,
+    0.95,
+    0.5
+   ]
+  },
+  "estufa": {
+   "glb": "estufa.glb",
+   "lod": "estufa_lod.glb",
+   "tam": [
+    0.6,
+    0.95,
+    0.6
+   ]
+  },
+  "lavatorio": {
+   "glb": "lavatorio.glb",
+   "lod": "lavatorio_lod.glb",
+   "tam": [
+    0.75,
+    1.0,
+    0.45
+   ]
+  },
+  "radio": {
+   "glb": "radio.glb",
+   "lod": "radio_lod.glb",
+   "tam": [
+    0.45,
+    0.3,
+    0.24
+   ]
+  },
+  "aparador": {
+   "glb": "aparador.glb",
+   "lod": "aparador_lod.glb",
+   "tam": [
+    1.2,
+    0.95,
+    0.45
+   ]
+  },
+  "velador": {
+   "glb": "velador.glb",
+   "lod": "velador_lod.glb",
+   "tam": [
+    0.45,
+    0.62,
+    0.38
+   ]
+  },
+  "escritorio": {
+   "glb": "escritorio.glb",
+   "lod": "escritorio_lod.glb",
+   "tam": [
+    1.4,
+    0.78,
+    0.75
+   ]
+  },
+  "archivador": {
+   "glb": "archivador.glb",
+   "lod": "archivador_lod.glb",
+   "tam": [
+    0.62,
+    1.2,
+    0.65
+   ]
+  },
+  "sofa": {
+   "glb": "sofa.glb",
+   "lod": "sofa_lod.glb",
+   "tam": [
+    1.8,
+    0.9,
+    0.8
+   ]
+  },
+  "jarro": {
+   "glb": "jarro.glb",
+   "lod": "jarro_lod.glb",
+   "tam": [
+    0.15,
+    0.2,
+    0.12
+   ]
+  },
+  "tetera": {
+   "glb": "tetera.glb",
+   "lod": "tetera_lod.glb",
+   "tam": [
+    0.2,
+    0.2,
+    0.16
+   ]
+  },
+  "olla": {
+   "glb": "olla.glb",
+   "lod": "olla_lod.glb",
+   "tam": [
+    0.3,
+    0.18,
+    0.22
+   ]
+  },
+  "balanza": {
+   "glb": "balanza.glb",
+   "lod": "balanza_lod.glb",
+   "tam": [
+    0.22,
+    0.28,
+    0.2
+   ]
+  },
+  "carburo": {
+   "glb": "carburo.glb",
+   "lod": "carburo_lod.glb",
+   "tam": [
+    0.14,
+    0.3,
+    0.12
+   ]
+  },
+  "pan": {
+   "glb": "pan.glb",
+   "lod": "pan_lod.glb",
+   "tam": [
+    0.32,
+    0.16,
+    0.32
+   ]
+  },
+  "pedestal": {
+   "glb": "pedestal.glb",
+   "lod": "pedestal_lod.glb",
+   "tam": [
+    0.6,
+    0.8,
+    0.5
+   ]
+  },
+  "cajon": {
+   "glb": "cajon.glb",
+   "lod": "cajon_lod.glb",
+   "tam": [
+    0.8,
+    0.6,
+    0.55
+   ]
+  },
+  "saco": {
+   "glb": "saco.glb",
+   "lod": "saco_lod.glb",
+   "tam": [
+    0.5,
+    0.75,
+    0.4
+   ]
+  },
+  "carretilla": {
+   "glb": "carretilla.glb",
+   "lod": "carretilla_lod.glb",
+   "tam": [
+    0.65,
+    0.65,
+    1.5
+   ]
+  },
+  "barril": {
+   "glb": "barril.glb",
+   "lod": "barril_lod.glb",
+   "tam": [
+    0.6,
+    0.9,
+    0.6
+   ]
+  },
+  "pepita": {
+   "glb": "pepita.glb",
+   "lod": "pepita_lod.glb",
+   "tam": [
+    0.3,
+    0.22,
+    0.26
+   ]
+  },
+  "libreta": {
+   "glb": "libreta.glb",
+   "lod": "libreta_lod.glb",
+   "tam": [
+    0.16,
+    0.04,
+    0.22
+   ]
+  },
+  "dinamita": {
+   "glb": "dinamita.glb",
+   "lod": "dinamita_lod.glb",
+   "tam": [
+    0.3,
+    0.1,
+    0.1
+   ]
+  },
+  "tambor": {
+   "glb": "tambor.glb",
+   "lod": "tambor_lod.glb",
+   "tam": [
+    0.58,
+    0.88,
+    0.58
+   ]
+  },
+  "vagoneta": {
+   "glb": "vagoneta.glb",
+   "lod": "vagoneta_lod.glb",
+   "tam": [
+    1.7,
+    1.25,
+    1.0
+   ]
+  },
+  "cocina_rustica": {
+   "glb": "cocina_rustica.glb",
+   "lod": "cocina_rustica_lod.glb",
+   "tam": [
+    0.9,
+    0.8,
+    0.6
+   ]
+  },
+  "tinaja": {
+   "glb": "tinaja.glb",
+   "lod": "tinaja_lod.glb",
+   "tam": [
+    0.55,
+    0.8,
+    0.55
+   ]
+  },
+  "brasero": {
+   "glb": "brasero.glb",
+   "lod": "brasero_lod.glb",
+   "tam": [
+    0.5,
+    0.42,
+    0.5
+   ]
+  },
+  "balde": {
+   "glb": "balde.glb",
+   "lod": "balde_lod.glb",
+   "tam": [
+    0.32,
+    0.32,
+    0.32
+   ]
+  },
+  "tablero_dibujo": {
+   "glb": "tablero_dibujo.glb",
+   "lod": "tablero_dibujo_lod.glb",
+   "tam": [
+    1.1,
+    1.1,
+    0.85
+   ]
+  },
+  "tina_lata": {
+   "glb": "tina_lata.glb",
+   "lod": "tina_lata_lod.glb",
+   "tam": [
+    1.2,
+    0.5,
+    0.65
+   ]
+  },
+  "chimenea": {
+   "glb": "chimenea.glb",
+   "lod": "chimenea_lod.glb",
+   "tam": [
+    1.6,
+    1.3,
+    0.6
+   ]
+  },
+  "mueble_planos": {
+   "glb": "mueble_planos.glb",
+   "lod": "mueble_planos_lod.glb",
+   "tam": [
+    1.3,
+    0.9,
+    0.9
+   ]
+  },
+  "caja_fuerte": {
+   "glb": "caja_fuerte.glb",
+   "lod": "caja_fuerte_lod.glb",
+   "tam": [
+    0.6,
+    0.9,
+    0.6
+   ]
+  },
+  "meson_enfermeria": {
+   "glb": "meson_enfermeria.glb",
+   "lod": "meson_enfermeria_lod.glb",
+   "tam": [
+    2.0,
+    1.05,
+    0.6
+   ]
+  },
+  "lavatorio_doble": {
+   "glb": "lavatorio_doble.glb",
+   "lod": "lavatorio_doble_lod.glb",
+   "tam": [
+    1.4,
+    1.2,
+    0.55
+   ]
+  },
+  "sillon_cuero": {
+   "glb": "sillon_cuero.glb",
+   "lod": "sillon_cuero_lod.glb",
+   "tam": [
+    0.85,
+    0.9,
+    0.85
+   ]
+  },
+  "balanza_columna": {
+   "glb": "balanza_columna.glb",
+   "lod": "balanza_columna_lod.glb",
+   "tam": [
+    0.55,
+    1.9,
+    0.5
+   ]
+  },
+  "mesa_mudar": {
+   "glb": "mesa_mudar.glb",
+   "lod": "mesa_mudar_lod.glb",
+   "tam": [
+    1.0,
+    0.95,
+    0.6
+   ]
+  },
+  "telefono": {
+   "glb": "telefono.glb",
+   "lod": "telefono_lod.glb",
+   "tam": [
+    0.25,
+    0.6,
+    0.2
+   ]
+  },
+  "macetero": {
+   "glb": "macetero.glb",
+   "lod": "macetero_lod.glb",
+   "tam": [
+    0.7,
+    0.85,
+    0.7
+   ]
+  },
+  "esqueleto": {
+   "glb": "esqueleto.glb",
+   "lod": "esqueleto_lod.glb",
+   "tam": [
+    0.5,
+    1.75,
+    0.4
+   ]
+  },
+  "velador_blanco": {
+   "glb": "velador_blanco.glb",
+   "lod": "velador_blanco_lod.glb",
+   "tam": [
+    0.45,
+    0.8,
+    0.4
+   ]
+  },
+  "rayos_x": {
+   "glb": "rayos_x.glb",
+   "lod": "rayos_x_lod.glb",
+   "tam": [
+    2.0,
+    1.9,
+    0.9
+   ]
+  },
+  "biombo_plomo": {
+   "glb": "biombo_plomo.glb",
+   "lod": "biombo_plomo_lod.glb",
+   "tam": [
+    1.0,
+    1.9,
+    0.5
+   ]
+  },
+  "mandos_rx": {
+   "glb": "mandos_rx.glb",
+   "lod": "mandos_rx_lod.glb",
+   "tam": [
+    1.0,
+    1.2,
+    0.6
+   ]
+  },
+  "transformador": {
+   "glb": "transformador.glb",
+   "lod": "transformador_lod.glb",
+   "tam": [
+    0.9,
+    1.5,
+    0.7
+   ]
+  },
+  "mesa_operaciones": {
+   "glb": "mesa_operaciones.glb",
+   "lod": "mesa_operaciones_lod.glb",
+   "tam": [
+    1.9,
+    0.95,
+    0.55
+   ]
+  },
+  "anestesia": {
+   "glb": "anestesia.glb",
+   "lod": "anestesia_lod.glb",
+   "tam": [
+    0.6,
+    1.3,
+    0.5
+   ]
+  },
+  "autoclave": {
+   "glb": "autoclave.glb",
+   "lod": "autoclave_lod.glb",
+   "tam": [
+    0.6,
+    1.2,
+    0.6
+   ]
+  },
+  "cubo_pedal": {
+   "glb": "cubo_pedal.glb",
+   "lod": "cubo_pedal_lod.glb",
+   "tam": [
+    0.3,
+    0.45,
+    0.3
+   ]
+  },
+  "incubadora_1920": {
+   "glb": "incubadora_1920.glb",
+   "lod": "incubadora_1920_lod.glb",
+   "tam": [
+    0.9,
+    1.1,
+    0.55
+   ]
+  },
+  "incubadora_1967": {
+   "glb": "incubadora_1967.glb",
+   "lod": "incubadora_1967_lod.glb",
+   "tam": [
+    1.0,
+    1.25,
+    0.6
+   ]
+  },
+  "torno": {
+   "glb": "torno.glb",
+   "lod": "torno_lod.glb",
+   "tam": [
+    1.6,
+    1.15,
+    0.6
+   ]
+  },
+  "torno_motor": {
+   "glb": "torno_motor.glb",
+   "lod": "torno_motor_lod.glb",
+   "tam": [
+    1.8,
+    1.25,
+    0.7
+   ]
+  },
+  "taladro": {
+   "glb": "taladro.glb",
+   "lod": "taladro_lod.glb",
+   "tam": [
+    0.5,
+    1.7,
+    0.65
+   ]
+  },
+  "motor_cerrado": {
+   "glb": "motor_cerrado.glb",
+   "lod": "motor_cerrado_lod.glb",
+   "tam": [
+    0.55,
+    0.42,
+    0.4
+   ]
+  },
+  "motor_abierto": {
+   "glb": "motor_abierto.glb",
+   "lod": "motor_abierto_lod.glb",
+   "tam": [
+    0.55,
+    0.42,
+    0.4
+   ]
+  },
+  "tablero_marmol": {
+   "glb": "tablero_marmol.glb",
+   "lod": "tablero_marmol_lod.glb",
+   "tam": [
+    1.0,
+    1.8,
+    0.3
+   ]
+  },
+  "engranaje": {
+   "glb": "engranaje.glb",
+   "lod": "engranaje_lod.glb",
+   "tam": [
+    0.5,
+    0.08,
+    0.5
+   ]
+  },
+  "polea": {
+   "glb": "polea.glb",
+   "lod": "polea_lod.glb",
+   "tam": [
+    0.45,
+    0.12,
+    0.45
+   ]
+  },
+  "caja_moldeo": {
+   "glb": "caja_moldeo.glb",
+   "lod": "caja_moldeo_lod.glb",
+   "tam": [
+    0.6,
+    0.3,
+    0.45
+   ]
+  },
+  "meson_recepcion": {
+   "glb": "meson_recepcion.glb",
+   "lod": "meson_recepcion_lod.glb",
+   "tam": [
+    2.0,
+    1.1,
+    0.7
+   ]
+  },
+  "maqueta": {
+   "glb": "maqueta.glb",
+   "lod": "maqueta_lod.glb",
+   "tam": [
+    1.6,
+    0.6,
+    1.2
+   ]
+  },
+  "carro_volteo": {
+   "glb": "carro_volteo.glb",
+   "lod": "carro_volteo_lod.glb",
+   "tam": [
+    1.8,
+    1.3,
+    1.1
+   ]
+  },
+  "perforadora": {
+   "glb": "perforadora.glb",
+   "lod": "perforadora_lod.glb",
+   "tam": [
+    1.3,
+    1.3,
+    0.5
+   ]
+  },
+  "locomotora_bat": {
+   "glb": "locomotora_bat.glb",
+   "lod": "locomotora_bat_lod.glb",
+   "tam": [
+    2.6,
+    1.6,
+    1.1
+   ]
+  },
+  "guitarra": {
+   "glb": "guitarra.glb",
+   "lod": "guitarra_lod.glb",
+   "tam": [
+    0.38,
+    1.0,
+    0.12
+   ]
+  },
+  "sillon_burdeo": {
+   "glb": "sillon_burdeo.glb",
+   "lod": "sillon_burdeo_lod.glb",
+   "tam": [
+    0.85,
+    0.95,
+    0.85
+   ]
+  },
+  "piano": {
+   "glb": "piano.glb",
+   "lod": "piano_lod.glb",
+   "tam": [
+    1.5,
+    1.3,
+    0.65
+   ]
+  },
+  "banco_tapizado": {
+   "glb": "banco_tapizado.glb",
+   "lod": "banco_tapizado_lod.glb",
+   "tam": [
+    1.4,
+    0.48,
+    0.45
+   ]
+  },
+  "chimenea_club": {
+   "glb": "chimenea_club.glb",
+   "lod": "chimenea_club_lod.glb",
+   "tam": [
+    1.8,
+    1.3,
+    0.45
+   ]
+  },
+  "crucifijo": {
+   "glb": "crucifijo.glb",
+   "lod": "crucifijo_lod.glb",
+   "tam": [
+    1.4,
+    2.4,
+    0.25
+   ]
+  },
+  "ambon": {
+   "glb": "ambon.glb",
+   "lod": "ambon_lod.glb",
+   "tam": [
+    0.6,
+    1.2,
+    0.5
+   ]
+  },
+  "san_lorenzo": {
+   "glb": "san_lorenzo.glb",
+   "lod": "san_lorenzo_lod.glb",
+   "tam": [
+    0.6,
+    1.9,
+    0.6
+   ]
+  },
+  "altar": {
+   "glb": "altar.glb",
+   "lod": "altar_lod.glb",
+   "tam": [
+    2.0,
+    1.0,
+    0.8
+   ]
+  },
+  "tina_bano": {
+   "glb": "tina_bano.glb",
+   "lod": "tina_bano_lod.glb",
+   "tam": [
+    1.6,
+    0.65,
+    0.75
+   ]
+  },
+  "calefon": {
+   "glb": "calefon.glb",
+   "lod": "calefon_lod.glb",
+   "tam": [
+    0.4,
+    0.9,
+    0.35
+   ]
+  },
+  "velador_rustico": {
+   "glb": "velador_rustico.glb",
+   "lod": "velador_rustico_lod.glb",
+   "tam": [
+    0.4,
+    0.6,
+    0.35
+   ]
+  },
+  "lena": {
+   "glb": "lena.glb",
+   "lod": "lena_lod.glb",
+   "tam": [
+    0.9,
+    0.6,
+    0.5
+   ]
+  },
+  "botas": {
+   "glb": "botas.glb",
+   "lod": "botas_lod.glb",
+   "tam": [
+    0.3,
+    0.3,
+    0.3
+   ]
+  },
+  "mate": {
+   "glb": "mate.glb",
+   "lod": "mate_lod.glb",
+   "tam": [
+    0.08,
+    0.18,
+    0.08
+   ]
+  },
+  "florero": {
+   "glb": "florero.glb",
+   "lod": "florero_lod.glb",
+   "tam": [
+    0.22,
+    0.45,
+    0.22
+   ]
+  },
+  "radiola": {
+   "glb": "radiola.glb",
+   "lod": "radiola_lod.glb",
+   "tam": [
+    1.1,
+    0.85,
+    0.45
+   ]
+  },
+  "picaporte": {
+   "glb": "picaporte.glb",
+   "lod": "picaporte_lod.glb",
+   "tam": [
+    0.16,
+    0.08,
+    0.07
+   ]
+  },
+  "caja_mudanza": {
+   "glb": "caja_mudanza.glb",
+   "lod": "caja_mudanza_lod.glb",
+   "tam": [
+    0.6,
+    0.45,
+    0.45
+   ]
+  },
+  "campana": {
+   "glb": "campana.glb",
+   "lod": "campana_lod.glb",
+   "tam": [
+    0.12,
+    0.25,
+    0.12
+   ]
+  },
+  "rollos_planos": {
+   "glb": "rollos_planos.glb",
+   "lod": "rollos_planos_lod.glb",
+   "tam": [
+    0.8,
+    0.1,
+    0.3
+   ]
+  },
+  "extintor": {
+   "glb": "extintor.glb",
+   "lod": "extintor_lod.glb",
+   "tam": [
+    0.2,
+    0.6,
+    0.18
+   ]
+  },
+  "carpa": {
+   "glb": "carpa.glb",
+   "lod": "carpa_lod.glb",
+   "tam": [
+    2.6,
+    2.1,
+    3.0
+   ]
+  },
+  "marco_bocamina": {
+   "glb": "marco_bocamina.glb",
+   "lod": "marco_bocamina_lod.glb",
+   "tam": [
+    3.2,
+    3.0,
+    0.7
+   ]
+  },
+  "roca1": {
+   "glb": "roca1.glb",
+   "lod": "roca1_lod.glb",
+   "tam": [
+    1.4,
+    1.0,
+    1.2
+   ]
+  },
+  "roca2": {
+   "glb": "roca2.glb",
+   "lod": "roca2_lod.glb",
+   "tam": [
+    1.0,
+    0.35,
+    0.8
+   ]
+  },
+  "roca3": {
+   "glb": "roca3.glb",
+   "lod": "roca3_lod.glb",
+   "tam": [
+    1.2,
+    0.45,
+    1.0
+   ]
+  },
+  "fuente_plaza": {
+   "glb": "fuente_plaza.glb",
+   "lod": "fuente_plaza_lod.glb",
+   "tam": [
+    2.2,
+    1.3,
+    2.2
+   ]
+  },
+  "carro_vaciador": {
+   "glb": "carro_vaciador.glb",
+   "lod": "carro_vaciador_lod.glb",
+   "tam": [
+    2.2,
+    1.8,
+    1.4
+   ]
+  },
+  "molde_lingote": {
+   "glb": "molde_lingote.glb",
+   "lod": "molde_lingote_lod.glb",
+   "tam": [
+    1.6,
+    0.25,
+    0.6
+   ]
+  },
+  "cabina_ascensor": {
+   "glb": "cabina_ascensor.glb",
+   "lod": "cabina_ascensor_lod.glb",
+   "tam": [
+    1.5,
+    2.4,
+    1.5
+   ]
+  },
+  "batea": {
+   "glb": "batea.glb",
+   "lod": "batea_lod.glb",
+   "tam": [
+    1.0,
+    0.35,
+    0.5
+   ]
+  },
+  "fogon": {
+   "glb": "fogon.glb",
+   "lod": "fogon_lod.glb",
+   "tam": [
+    0.9,
+    1.1,
+    0.9
+   ]
+  },
+  "carbon": {
+   "glb": "carbon.glb",
+   "lod": "carbon_lod.glb",
+   "tam": [
+    1.2,
+    0.5,
+    1.0
+   ]
+  },
+  "ladrillos": {
+   "glb": "ladrillos.glb",
+   "lod": "ladrillos_lod.glb",
+   "tam": [
+    0.9,
+    0.6,
+    0.5
+   ]
+  },
+  "cono_obra": {
+   "glb": "cono_obra.glb",
+   "lod": "cono_obra_lod.glb",
+   "tam": [
+    0.35,
+    0.6,
+    0.35
+   ]
+  },
+  "olla_escoria": {
+   "glb": "olla_escoria.glb",
+   "lod": "olla_escoria_lod.glb",
+   "tam": [
+    2.1,
+    1.68,
+    2.1
+   ]
+  },
+  "banco_plaza_1940": {
+   "glb": "banco_plaza_1940.glb",
+   "lod": "banco_plaza_1940_lod.glb",
+   "tam": [
+    1.9,
+    0.85,
+    0.65
+   ]
+  },
+  "farol_calle_1905": {
+   "glb": "farol_calle_1905.glb",
+   "lod": "farol_calle_1905_lod.glb",
+   "tam": [
+    0.5,
+    4.2,
+    0.5
+   ]
+  },
+  "chasis_vaciador": {
+   "glb": "chasis_vaciador.glb",
+   "lod": "chasis_vaciador_lod.glb",
+   "tam": [
+    4.3,
+    2.4,
+    1.9
+   ]
+  },
+  "vagoneta_vacia": {
+   "glb": "vagoneta_vacia.glb",
+   "lod": "vagoneta_vacia_lod.glb",
+   "tam": [
+    1.5,
+    1.0,
+    0.9
+   ]
+  },
+  "roca_grande1": {
+   "glb": "roca_grande1.glb",
+   "lod": "roca_grande1_lod.glb",
+   "tam": [
+    3.4,
+    3.0,
+    3.0
+   ]
+  },
+  "sacos_monton": {
+   "glb": "sacos_monton.glb",
+   "lod": "sacos_monton_lod.glb",
+   "tam": [
+    1.3,
+    0.75,
+    0.9
+   ]
+  },
+  "farol_brazo": {
+   "glb": "farol_brazo.glb",
+   "lod": "farol_brazo_lod.glb",
+   "tam": [
+    0.7,
+    0.75,
+    0.3
+   ]
+  },
+  "letrero_poste": {
+   "glb": "letrero_poste.glb",
+   "lod": "letrero_poste_lod.glb",
+   "tam": [
+    1.2,
+    2.2,
+    0.25
+   ]
+  },
+  "torre_andarivel": {
+   "glb": "torre_andarivel.glb",
+   "lod": "torre_andarivel_lod.glb",
+   "tam": [
+    2.4,
+    9.0,
+    2.4
+   ]
+  },
+  "mata_coiron": {
+   "glb": "mata_coiron.glb",
+   "lod": "mata_coiron_lod.glb",
+   "tam": [
+    0.7,
+    0.6,
+    0.7
+   ]
+  },
+  "bombo": {
+   "glb": "bombo.glb",
+   "lod": "bombo_lod.glb",
+   "tam": [
+    0.75,
+    0.75,
+    0.4
+   ]
+  },
+  "cajon_grande": {
+   "glb": "cajon_grande.glb",
+   "lod": "cajon_grande_lod.glb",
+   "tam": [
+    1.6,
+    1.6,
+    1.6
+   ]
+  },
+  "roca_grande2": {
+   "glb": "roca_grande2.glb",
+   "lod": "roca_grande2_lod.glb",
+   "tam": [
+    4.0,
+    2.2,
+    3.2
+   ]
+  },
+  "banco_plaza_1905": {
+   "glb": "banco_plaza_1905.glb",
+   "lod": "banco_plaza_1905_lod.glb",
+   "tam": [
+    1.8,
+    0.85,
+    0.6
+   ]
+  },
+  "proyector_cine": {
+   "glb": "proyector_cine.glb",
+   "lod": "proyector_cine_lod.glb",
+   "tam": [
+    1.3,
+    1.5,
+    0.6
+   ]
+  },
+  "vagoneta_madera": {
+   "glb": "vagoneta_madera.glb",
+   "lod": "vagoneta_madera_lod.glb",
+   "tam": [
+    1.33,
+    1.05,
+    1.05
+   ]
+  },
+  "escritorio_cortina": {
+   "glb": "escritorio_cortina.glb",
+   "lod": "escritorio_cortina_lod.glb",
+   "tam": [
+    1.7,
+    1.2,
+    0.85
+   ]
+  },
+  "palangana": {
+   "glb": "palangana.glb",
+   "lod": "palangana_lod.glb",
+   "tam": [
+    0.7,
+    0.55,
+    0.42
+   ]
+  },
+  "tronco_picar": {
+   "glb": "tronco_picar.glb",
+   "lod": "tronco_picar_lod.glb",
+   "tam": [
+    0.6,
+    0.9,
+    0.5
+   ]
+  },
+  "redoblante": {
+   "glb": "redoblante.glb",
+   "lod": "redoblante_lod.glb",
+   "tam": [
+    0.4,
+    0.3,
+    0.4
+   ]
+  },
+  "ollas_colgadas": {
+   "glb": "ollas_colgadas.glb",
+   "lod": "ollas_colgadas_lod.glb",
+   "tam": [
+    1.3,
+    0.4,
+    0.22
+   ]
+  }
+ },
+ "planos": [
+  "alfombra1",
+  "alfombra2",
+  "paisaje",
+  "plano",
+  "retrato1",
+  "retrato2",
+  "retrato3",
+  "retrato4",
+  "virgen",
+  "foto_club2",
+  "foto_club3",
+  "foto_club4",
+  "foto_club5",
+  "oleo1",
+  "oleo2",
+  "oleo3",
+  "mapa_chile",
+  "panel_hist1",
+  "panel_hist2",
+  "panel_hist3",
+  "panel_hist4",
+  "mural_mina",
+  "foto_pas1",
+  "foto_pas2",
+  "foto_pas3",
+  "foto_club1",
+  "pizarron",
+  "lamina_metrico",
+  "oleo4",
+  "oleo5",
+  "reloj",
+  "radiografia",
+  "bandera_chile",
+  "tablero_herr1",
+  "tablero_herr2",
+  "piel_oveja",
+  "relicario",
+  "cuadro_iglesia",
+  "bandera_vaticano",
+  "cuadro_palit1",
+  "cuadro_palit2",
+  "carta",
+  "tarjeta",
+  "diario_mural",
+  "calendario",
+  "banderin"
+ ]
+}

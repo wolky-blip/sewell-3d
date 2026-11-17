@@ -1,0 +1,244 @@
+{
+ "casa_hamilton_v3b": {
+  "glb": "assets3d/trellis/casa_hamilton_v3b.glb",
+  "yaw": 0,
+  "tipo": "512"
+ },
+ "camarote1905_v2": {
+  "glb": "assets3d/trellis/camarote1905_v2.glb",
+  "yaw": 0,
+  "tipo": "512"
+ },
+ "camarote_celeste": {
+  "glb": "assets3d/trellis/camarote_celeste.glb",
+  "yaw": 0,
+  "tipo": "512"
+ },
+ "camarote_crema": {
+  "glb": "assets3d/trellis/camarote_crema.glb",
+  "yaw": 0,
+  "tipo": "512"
+ },
+ "camarote_naranja": {
+  "glb": "assets3d/trellis/camarote_naranja.glb",
+  "yaw": 0,
+  "tipo": "512"
+ },
+ "camarote_rojo": {
+  "glb": "assets3d/trellis/camarote_rojo.glb",
+  "yaw": 0,
+  "tipo": "512"
+ },
+ "casa_hamilton": {
+  "glb": "assets3d/trellis/casa_hamilton.glb",
+  "yaw": 0,
+  "tipo": "512"
+ },
+ "casa_piedra_v2": {
+  "glb": "assets3d/trellis/casa_piedra_v2.glb",
+  "yaw": 0,
+  "tipo": "512"
+ },
+ "cine": {
+  "glb": "assets3d/trellis/cine.glb",
+  "yaw": 0,
+  "tipo": "512"
+ },
+ "club": {
+  "glb": "assets3d/trellis/club.glb",
+  "yaw": 0,
+  "tipo": "512"
+ },
+ "concentradora": {
+  "glb": "assets3d/trellis/concentradora.glb",
+  "yaw": 0,
+  "tipo": "512"
+ },
+ "correos": {
+  "glb": "assets3d/trellis/correos.glb",
+  "yaw": 0,
+  "tipo": "512"
+ },
+ "estacion": {
+  "glb": "assets3d/trellis/estacion.glb",
+  "yaw": 0,
+  "tipo": "512"
+ },
+ "hospital_ala": {
+  "kit": {
+   "pisos": 4,
+   "panos": 2,
+   "grupo": 5,
+   "color": 5933640
+  },
+  "glb_trellis": "assets3d/trellis/hospital_ala.glb",
+  "yaw": 0,
+  "tipo": "kit",
+  "nota": "N4-C20 (14-11): kit Sewell (combina con hospital_centro)"
+ },
+ "hospital_centro": {
+  "kit": {
+   "pisos": 4,
+   "panos": 2,
+   "grupo": 5,
+   "color": 5933640
+  },
+  "glb_trellis": "assets3d/trellis/hospital_157.glb",
+  "yaw": 0,
+  "tipo": "kit",
+  "nota": "N4-C20 (14-11): kit Sewell hecho a mano en código (js/mundo/kitSewell.js): tablas, ventanas de guillotina reales, zinc con cumbrera. La malla TRELLIS anterior (glb_trellis) se veía «de lego»; para volver, poner glb y quitar kit"
+ },
+ "molino_v2b": {
+  "glb": "assets3d/trellis/molino_v2b.glb",
+  "yaw": 0,
+  "tipo": "512"
+ },
+ "palitroque": {
+  "glb": "assets3d/trellis/palitroque.glb",
+  "yaw": 0,
+  "tipo": "512"
+ },
+ "panaderia": {
+  "glb": "assets3d/trellis/panaderia.glb",
+  "yaw": 0,
+  "tipo": "512"
+ },
+ "pulperia": {
+  "glb": "assets3d/trellis/pulperia.glb",
+  "yaw": 0,
+  "tipo": "512"
+ },
+ "taller": {
+  "glb": "assets3d/trellis/taller.glb",
+  "yaw": 0,
+  "tipo": "512"
+ },
+ "taller_largo_v2e": {
+  "glb": "assets3d/trellis/taller_largo_v2e.glb",
+  "yaw": 0,
+  "tipo": "512"
+ },
+ "anden_andarivel": {
+  "glb": "assets3d/trellis/anden_andarivel.glb",
+  "yaw": 0,
+  "tipo": "1024_cascade"
+ },
+ "torre_andarivel": {
+  "glb": "assets3d/trellis/torre_andarivel.glb",
+  "yaw": 0,
+  "tipo": "1024_cascade"
+ },
+ "capacho": {
+  "glb": "assets3d/trellis/capacho.glb",
+  "yaw": 0,
+  "tipo": "1024_cascade"
+ },
+ "vagoneta": {
+  "glb": "assets3d/trellis/vagoneta.glb",
+  "yaw": 0,
+  "tipo": "1024_cascade"
+ },
+ "carro_plano": {
+  "glb": "assets3d/trellis/carro_plano.glb",
+  "yaw": 0,
+  "tipo": "1024_cascade"
+ },
+ "locomotora": {
+  "glb": "assets3d/trellis/locomotora.glb",
+  "yaw": 138.2,
+  "tipo": "1024_cascade"
+ },
+ "olla_cobre": {
+  "glb": "assets3d/trellis/olla_cobre.glb",
+  "yaw": 0,
+  "tipo": "1024_cascade"
+ },
+ "olla_fundicion": {
+  "glb": "assets3d/trellis/olla_fundicion.glb",
+  "yaw": 0,
+  "tipo": "1024_cascade"
+ },
+ "fogata_lena": {
+  "glb": "assets3d/trellis/fogata_lena.glb",
+  "yaw": 0,
+  "tipo": "1024_cascade"
+ },
+ "_personajes": {
+  "hercules": "assets3d/anim/hercules_malla.glb",
+  "condor_vuelo": "assets3d/anim/condor_vuelo.glb",
+  "condor_posado": "assets3d/anim/condor_posado.glb",
+  "condor_gigante_vuelo": "assets3d/anim/condor_gigante_vuelo.glb",
+  "condor_gigante_posado": "assets3d/anim/condor_gigante_posado.glb",
+  "jefe": "assets3d/anim/jefe_malla.glb",
+  "minero": "assets3d/anim/minero_malla.glb",
+  "diego": "assets3d/anim/diego_m_malla.glb",
+  "pedro": "assets3d/anim/pedro_malla.glb",
+  "vecina": "assets3d/anim/vecina_m_malla.glb",
+  "anciana": "assets3d/anim/anciana_m_malla.glb",
+  "enfermera": "assets3d/anim/enfermera_malla.glb",
+  "medico": "assets3d/anim/medico_malla.glb",
+  "doliente_minero": "assets3d/anim/doliente_minero_malla.glb",
+  "doliente_mujer": "assets3d/anim/doliente_mujer_malla.glb",
+  "chaqueta": "assets3d/anim/chaqueta_diego.glb"
+ },
+ "taller_n4": {
+  "glb": "assets3d/trellis/taller_n4.glb",
+  "yaw": 0,
+  "tipo": "512"
+ },
+ "torre_balcones": {
+  "glb": "assets3d/trellis/torre_balcones.glb",
+  "yaw": 90,
+  "tipo": "512"
+ },
+ "nido_condor": {
+  "glb": "assets3d/trellis/nido_condor.glb",
+  "yaw": 0,
+  "tipo": "512"
+ },
+ "_excluidas": {
+  "hospital": {
+   "glb": "assets3d/trellis/hospital.glb",
+   "yaw": 0,
+   "tipo": "512",
+   "motivo": "QC 14-11: generado para N4-C14 pero ningún nivel lo usa (EN_JUEGO.hospital usa hospital_centro); fuera hasta que se decida cambiar la fuente. Hoja capturas/gpu/qc_mallas/hoja_hospital.jpg"
+  }
+ },
+ "camarote_turquesa": {
+  "glb": "assets3d/trellis/camarote_turquesa_xg3.glb",
+  "yaw": 0,
+  "tipo": "512",
+  "nota": "N0-XG3 (14-11): costado limpio de TRELLIS espejado sobre el plano de la cumbrera (blender/espejar_dorso.py); antes assets3d/trellis/camarote_turquesa.glb (excluida: QC 14-11 (foto de Diego N2 plaza): fachada trasera rota/derretida, trozos sueltos en la ba)"
+ },
+ "camarote_cobalto": {
+  "glb": "assets3d/trellis/camarote_cobalto_xg3.glb",
+  "yaw": 0,
+  "tipo": "512",
+  "nota": "N0-XG3 (14-11): costado limpio de TRELLIS espejado sobre el plano de la cumbrera (blender/espejar_dorso.py); antes assets3d/trellis/camarote_cobalto.glb (excluida: QC 14-11 (foto de Diego N2 plaza): anexo de madera inventado pegado a la fachada (bloque b)"
+ },
+ "camarote_ocre": {
+  "glb": "assets3d/trellis/camarote_ocre_xg3.glb",
+  "yaw": 0,
+  "tipo": "512",
+  "nota": "N0-XG3 (14-11): costado limpio de TRELLIS espejado sobre el plano de la cumbrera (blender/espejar_dorso.py); antes assets3d/trellis/camarote_ocre.glb (excluida: N0-XG1 (14-11): anexos/porches oscuros inventados en una fachada; se ven desde las calles )"
+ },
+ "camarote_verde": {
+  "glb": "assets3d/trellis/camarote_verde_xg3.glb",
+  "yaw": 0,
+  "tipo": "512",
+  "nota": "N0-XG3 (14-11): costado limpio de TRELLIS espejado sobre el plano de la cumbrera (blender/espejar_dorso.py); antes assets3d/trellis/camarote_verde.glb (excluida: N0-XG1 (14-11): cubos anexos oscuros pegados a una fachada; se ven desde los caminos (p. e)"
+ },
+ "camarote_azotea": {
+  "glb": "assets3d/trellis/camarote_azotea_xg3.glb",
+  "yaw": 0,
+  "tipo": "512",
+  "nota": "N0-XG3 (14-11): costado limpio de TRELLIS espejado sobre el plano de la cumbrera (blender/espejar_dorso.py); antes assets3d/trellis/camarote_azotea.glb (excluida: N0-XG1 (14-11): escalera de incendio/anexo enredado que asoma sobre el techo; se ve desde )"
+ },
+ "escuela": {
+  "glb": "assets3d/trellis/escuela_xg3.glb",
+  "yaw": 0,
+  "tipo": "512",
+  "nota": "N0-XG3 (14-11): costado limpio de TRELLIS espejado sobre el plano de la cumbrera (blender/espejar_dorso.py); antes assets3d/trellis/escuela.glb (excluida: N0-XG1 (14-11): porches y piezas desordenadas en la fachada larga; se ve desde la plaza de)"
+ },
+ "_personajes_qc": {}
+}

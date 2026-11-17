@@ -1,0 +1,38 @@
+{
+ "id": "muchacha",
+ "alto": 1.6,
+ "vel": {
+  "caminar": 0.701,
+  "correr": 2.97
+ },
+ "huella": 0.32,
+ "contra": 0.195,
+ "ciclo_escalera": 1.2,
+ "peldanos_ciclo": 2,
+ "medidas": {
+  "brazo": 0.259,
+  "cuello": 0.329,
+  "entrepierna": -0.089,
+  "falda": true
+ },
+ "acciones": [
+  "b_aplaudir",
+  "b_bolsa",
+  "b_bolsillo",
+  "b_brazo",
+  "b_cartera",
+  "b_diario",
+  "b_pan",
+  "b_ramo",
+  "b_tocar_golpear",
+  "b_tocar_soplar",
+  "bajar",
+  "caminar",
+  "correr",
+  "hablar",
+  "idle",
+  "jugar",
+  "saludar",
+  "subir"
+ ]
+}

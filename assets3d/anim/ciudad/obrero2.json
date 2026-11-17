@@ -1,0 +1,38 @@
+{
+ "id": "obrero2",
+ "alto": 1.7,
+ "vel": {
+  "caminar": 0.68,
+  "correr": 3.15
+ },
+ "huella": 0.32,
+ "contra": 0.195,
+ "ciclo_escalera": 1.2,
+ "peldanos_ciclo": 2,
+ "medidas": {
+  "brazo": 0.191,
+  "cuello": 0.291,
+  "entrepierna": -0.126,
+  "falda": true
+ },
+ "acciones": [
+  "b_aplaudir",
+  "b_bolsa",
+  "b_bolsillo",
+  "b_brazo",
+  "b_cartera",
+  "b_diario",
+  "b_pan",
+  "b_ramo",
+  "b_tocar_golpear",
+  "b_tocar_soplar",
+  "bajar",
+  "caminar",
+  "correr",
+  "hablar",
+  "idle",
+  "jugar",
+  "saludar",
+  "subir"
+ ]
+}
