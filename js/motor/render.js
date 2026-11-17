@@ -306,13 +306,13 @@ export class Render {
           if (m.uniforms) for (const k in m.uniforms) { const t = m.uniforms[k] && m.uniforms[k].value; if (!pend(t)) continue; falta = true; if (lejos === null) lejos = !cerca(o); if (!lejos) tx.add(t); }
           if (!falta) ok.add(m); } });
       if (tx.size) { P.tex.push(...tx); P.texCerca = (P.texCerca || 0) + tx.size; }
-      if (P.cola.length) P.lote = 1;
+      if (P.cola.length) P.vistos = new WeakSet();
       if (P.cola.length || tx.size) return;
       // sala cercana (a < 22 m de su puerta; las genéricas, ya armadas de antemano): sus sombreadores con la luz de adentro y sus texturas
       if (!M.salaActual && M.R && M.jug) {
         const j = M.jug.pos; let id = null, dm = 22;
         for (const p of M.R.puertas || []) { const s = M.R.salas[p.sala]; if (p.lado === 'salida' || p.cerrada || !s || !s.grupo || P.salas.has(s)) continue; const d = Math.hypot(j.x - p.x, j.z - p.z); if (d < dm && Math.abs((M.jug.pie ?? j.y) - (p.y || 0)) < 4) { dm = d; id = p.sala; } }
-        if (id) { const s = M.R.salas[id]; P.salas.add(s); P.modo = 'sala'; P.lote = 1; P.sala = id; P.salaObj = s; P.primera = true;
+        if (id) { const s = M.R.salas[id]; P.salas.add(s); P.modo = 'sala'; P.vistos = new WeakSet(); P.sala = id; P.salaObj = s; P.primera = true;
           const tx = new Set(); s.grupo.traverse(o => { if (!objeto(o)) return; P.cola.push(o); for (const m of Array.isArray(o.material) ? o.material : [o.material]) for (const k in m) { const t = m[k]; if (t && t.isTexture && t.image && !t.isRenderTargetTexture && !props.get(t).__webglInit) tx.add(t); } });
           // y lo de afuera a < 60 m de la puerta: el cubo de las ventanas lo dibuja aunque nunca se haya visto (texturas de una vez: 0,2-0,5 s)
           const pu = (M.R.puertas || []).find(q => q.sala === id && q.lado !== 'salida'), w = new THREE.Vector3();
@@ -321,7 +321,7 @@ export class Render {
           P.tex.push(...tx); return; }
       }
       if (!P.rtHecho && !M.salaActual && URLR.get('ventanas') !== '0') {   // la ciudad tal como la ve el cubo de las ventanas
-        P.rtHecho = true; P.modo = 'rt'; P.lote = 1; P.rt ||= new THREE.WebGLRenderTarget(1, 1, { type: THREE.HalfFloatType });
+        P.rtHecho = true; P.modo = 'rt'; P.vistos = new WeakSet(); P.rt ||= new THREE.WebGLRenderTarget(1, 1, { type: THREE.HalfFloatType });
         this.escena.traverseVisible(o => { if (objeto(o)) P.cola.push(o); });
       }
       return;
@@ -329,7 +329,10 @@ export class Render {
     if (P.modo && M.salaActual) { P.cola.length = 0; if (P.modo === 'rt') P.rtHecho = false; P.modo = null; return; }   // entró a una sala: lo de afuera se retoma al salir
     if (P.modo === 'sala' && M.R.salas[P.sala] !== P.salaObj) { P.cola.length = 0; P.modo = null; return; }   // la sala se desarmó
     const R = P.raiz, t0 = performance.now(); R.children.length = 0;
-    for (let n = 0; n < P.lote && P.cola.length;) { const o = P.cola.pop(); if (o.parent) { R.children.push(o); n++; } }
+    // CAPACHO-MOVIL: ≤ 3 materiales aún no compilados en este turno por cuadro (los ya vistos pasan gratis, hasta P.lote objetos)
+    const vis = P.vistos ||= new WeakSet(); let nm = 0;
+    for (let n = 0; n < P.lote && P.cola.length;) { const o = P.cola[P.cola.length - 1], ms = [].concat(o.material), k = ms.filter(m => !vis.has(m)).length;
+      if (n > 0 && nm + k > 3) break; P.cola.pop(); if (o.parent) { R.children.push(o); n++; nm += k; for (const m of ms) vis.add(m); } }
     const np0 = (this.renderer.info.programs || []).length;
     const rt0 = this.renderer.getRenderTarget(), esc = this.escena, niebla = esc.fog, S = P.modo === 'sala' ? P.salaObj : null, visS = S && S.grupo.visible;
     try {
@@ -350,9 +353,8 @@ export class Render {
     // el enlace de los programas nuevos corre en la GPU, pero la próxima consulta síncrona del cuadro lo espera: ≤ 3 programas nuevos por cuadro
     const nuevos = (this.renderer.info.programs || []).length - np0;
     // CAPACHO-MOVIL: el lote crecía hasta 64 con lo barato (ya compilado) y la sala Fortuna (a < 22 m de la bocamina, con el paseo en
-    // vagoneta) estrenaba 16-21 programas en un solo cuadro (0,4-0,7 s esperando el enlace). Ahora crece solo mientras no aparezcan
-    // programas nuevos y, en cuanto aparecen, baja a 1 objeto por cuadro (≤ 1-2 enlaces por cuadro)
-    P.lote = nuevos >= 2 || dt > 10 ? 1 : nuevos === 0 && dt < 4 ? Math.min(64, P.lote * 2) : P.lote;
+    // vagoneta) estrenaba 16-21 programas en un solo cuadro (0,4-0,7 s esperando el enlace): ahora el tope de 3 materiales nuevos de arriba
+    P.lote = dt > 10 || nuevos > 3 ? Math.max(1, P.lote >> 1) : dt < 4 && nuevos < 2 ? Math.min(64, P.lote * 2) : P.lote;
   }
 
   // CAPACHO-MOVIL (17-11-2026): la luz horneada de la mina (mina.js, conLuzMina) cambia el sombreador de cada material que toca. El
